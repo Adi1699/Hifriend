@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1051659429782",
+    "firebase_url": "https://hifriend-574e7.firebaseio.com",
+    "project_id": "hifriend-574e7",
+    "storage_bucket": "hifriend-574e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051659429782:android:f6f098b9195e7911dc1fb7",
+        "android_client_info": {
+          "package_name": "com.aditya.hifriend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051659429782-fvia8k3ad0d0rs8cjeca5ifgeionrvmb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aditya.hifriend",
+            "certificate_hash": "292429ea576748f475b85b9c58114b777cfa6803"
+          }
+        },
+        {
+          "client_id": "1051659429782-lha1psjqrr2dgbed80bjhoej326501nl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuX-0xuQKH8SyUHK0RtY6fNIVoUOulluk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051659429782-lha1psjqrr2dgbed80bjhoej326501nl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
