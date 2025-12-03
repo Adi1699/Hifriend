@@ -2,167 +2,195 @@
 
 Total Testcases: **10**
 
-## TC_KAN6_LOGIN_001
-**Description:** TC_KAN6_LOGIN_001: Verify successful login using provided credentials.
+## KAN6_F1_NAV_001
+**Description:** Verify successful navigation to the newly added 'Job Section' under the Admin module.
 
-**Priority:** Critical
+**Priority:** High
 
-**Expected Result:** User is successfully logged in, and the Dashboard is displayed as the default landing page.
+**Expected Result:** The system successfully navigates to the 'Admin / Job' section, and the 'Job Titles' list view is displayed.
 
 ### Steps:
 - Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
-- Enter 'Admin' into the username input field.
-- Enter 'admin123' into the password input field.
-- Click the Login button.
-
----
-
-## TC_KAN6_NAV_002
-**Description:** TC_KAN6_NAV_002: Verify navigation to the new 'Job Section' under the Admin module.
-
-**Priority:** High
-
-**Expected Result:** The user is navigated to the 'Admin / User Management' page, and the new 'Job' sub-section is accessible.
-
-### Steps:
-- Perform Login (as per TC_KAN6_LOGIN_001).
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
 - Click 'Admin' in the left navigation panel.
-- Verify the page title changes to 'Admin / User Management'.
-- Locate and click the newly added 'Job' item/link within the Admin section.
+- Verify navigation to the new 'Job' subsection under Admin and check if the 'Job Titles' list is visible.
 
 ---
 
-## TC_KAN6_JOB_003
-**Description:** TC_KAN6_JOB_003: Positive scenario: Create a new job title with valid data in all required fields.
+## KAN6_F1_CRUD_002
+**Description:** Verify successful creation of a new Job Title using valid, complete data.
 
 **Priority:** High
 
-**Expected Result:** A new Job Title record is successfully created, a success message is displayed, and the new title appears in the Job Titles list.
+**Expected Result:** A new job title is successfully saved, and a success message confirming creation is displayed.
 
 ### Steps:
-- Navigate to Admin -> Job (as per TC_KAN6_NAV_002).
-- Click the 'Add New Button'.
-- Enter 'Senior QA Engineer' into the 'Job Title' input field.
-- Enter 'Responsible for automated testing and quality assurance across major releases.' into the 'Job Description' textarea.
-- Enter 'Skills: Selenium, Python, Automation Framework development.' into the 'Job Specification' textarea.
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
+- Navigate to Admin -> Job.
+- Click the 'Add New' button.
+- Enter 'Software Architect' into the 'Job Title' field.
+- Enter 'Designs and oversees software structure.' into the 'Job Description' field.
+- Enter 'Expertise in cloud platforms and microservices.' into the 'Job Specification' field.
 - Click the 'Save' button.
 
 ---
 
-## TC_KAN6_JOB_004
-**Description:** TC_KAN6_JOB_004: Negative scenario: Attempt to save a new job title leaving the mandatory 'Job Title' field empty.
+## KAN6_F1_VAL_003
+**Description:** Verify validation for the mandatory 'Job Title' field during job creation (Negative Test).
 
 **Priority:** High
 
-**Expected Result:** The system displays a validation error for the 'Job Title' field, and the record is NOT saved. The user remains on the 'Add Job Title' form.
+**Expected Result:** An error message is displayed indicating that 'Job Title' is a required field, and the record is not saved.
 
 ### Steps:
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
 - Navigate to Admin -> Job -> Click 'Add New Button'.
-- Enter 'Detailed job requirements for recruitment' into the 'Job Description' textarea.
-- Enter 'Must meet all essential specifications' into the 'Job Specification' textarea.
-- Ensure the 'Job Title' field is empty.
+- Enter 'Detailed system design documents.' into the 'Job Description' field.
+- Leave the 'Job Title' field empty.
+- Enter 'Proficient in UML' into the 'Job Specification' field.
 - Click the 'Save' button.
 
 ---
 
-## TC_KAN6_JOB_005
-**Description:** TC_KAN6_JOB_005: Positive scenario: Discarding job creation using the 'Cancel' action.
+## KAN6_F1_CRUD_004
+**Description:** Verify the 'Cancel' action discards changes on the Job Creation form.
 
 **Priority:** Medium
 
-**Expected Result:** The Job Title creation form is discarded, no changes are saved, and the user returns to the Job Titles list view.
+**Expected Result:** The form is closed, and no changes are saved, returning to the Job Titles list view.
 
 ### Steps:
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
 - Navigate to Admin -> Job -> Click 'Add New Button'.
-- Enter 'Temporary Test Job' into the 'Job Title' input field.
+- Enter 'Temporary Role' into the 'Job Title' field.
 - Click the 'Cancel' button.
-- Verify that the 'Temporary Test Job' does not appear in the list of Job Titles.
+- Verify the system returns to the Job Titles list without adding 'Temporary Role'.
 
 ---
 
-## TC_KAN6_JOB_006
-**Description:** TC_KAN6_JOB_006: Positive scenario: Deleting an existing Job Title record.
+## KAN6_F1_CRUD_005
+**Description:** Verify editing an existing Job Title record successfully.
 
 **Priority:** High
 
-**Expected Result:** The specific job title record is successfully deleted after confirmation, and a success message is displayed.
+**Expected Result:** The selected Job Title's details are updated with the new description and specification, and a success message is displayed.
 
 ### Steps:
-- Perform Login (as per TC_KAN6_LOGIN_001).
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
 - Navigate to Admin -> Job.
-- Locate a pre-existing Job Title record (e.g., one created in a preceding test if possible, or a known existing entry).
-- Click the 'Delete Icon' next to the selected Job Title.
-- Confirm the deletion prompt.
-- Verify the record is removed from the 'Job Titles' table.
-
----
-
-## TC_KAN6_JOB_007
-**Description:** TC_KAN6_JOB_007: Positive scenario: Editing an existing Job Title successfully.
-
-**Priority:** High
-
-**Expected Result:** The existing Job Title details are updated with the new values, and a success message is displayed on the Job Titles list view.
-
-### Steps:
-- Perform Login (as per TC_KAN6_LOGIN_001).
-- Navigate to Admin -> Job.
-- Click the 'Edit Icon' next to an existing Job Title (e.g., 'Senior QA Engineer').
-- Modify the 'Job Description' field to 'Updated description reflecting senior scope changes...'
+- Locate an existing Job Title (e.g., 'System Analyst') and click the 'Edit Icon'.
+- Modify the 'Job Description' field to 'Analyzes complex business problems new update'.
 - Click the 'Save' button.
-- Navigate back to the Job Titles list and verify the 'Job Description' is updated.
 
 ---
 
-## TC_KAN6_EDIT_008
-**Description:** TC_KAN6_EDIT_008: Verify the mandatory 'User Type' field appears correctly when navigating to Edit User.
-
-**Priority:** Critical
-
-**Expected Result:** The user is navigated to the 'Edit User' page (Page title changes to 'Admin'), and the mandatory 'User Type' field is present and selectable.
-
-### Steps:
-- Perform Login (as per TC_KAN6_LOGIN_001).
-- Navigate to Admin / User Management (via 'Admin' left navigation).
-- Click the 'Edit Icon' (pencil) next to an existing user record.
-- Verify the page title changes to 'Admin'.
-- Verify the presence of the field labeled 'User Type*' indicating it is required.
-
----
-
-## TC_KAN6_EDIT_009
-**Description:** TC_KAN6_EDIT_009: Negative scenario: Attempt to save user modifications while leaving the mandatory 'User Type' field empty.
-
-**Priority:** Critical
-
-**Expected Result:** The system displays a validation error, preventing the save operation, as the mandatory 'User Type' field is left unselected.
-
-### Steps:
-- Perform Login (as per TC_KAN6_LOGIN_001).
-- Navigate to the 'Edit User' form for any user.
-- Keep the 'User Type' dropdown in its default/unselected state (assuming it's not pre-selected if user has no permissions to change).
-- Optionally modify a non-conflicting field, e.g., Status dropdown to 'Disabled'.
-- Click the 'Save Button'.
-- Verify a validation message referencing 'User Type' is displayed and the user details are NOT updated.
-
----
-
-## TC_KAN6_EDIT_010
-**Description:** TC_KAN6_EDIT_010: Positive scenario: Successfully updating user details, ensuring 'User Type' is selected correctly before saving.
+## KAN6_F1_CRUD_006
+**Description:** Verify deletion of an existing Job Title record.
 
 **Priority:** High
 
-**Expected Result:** The user modifications are saved successfully, including the selection made in the 'User Type' field, and the user returns to the User Management page.
+**Expected Result:** The system prompts for confirmation, and upon confirmation, the Job Title is permanently removed from the list, and a success message is displayed.
 
 ### Steps:
-- Perform Login (as per TC_KAN6_LOGIN_001).
-- Navigate to the 'Edit User' form for an existing user.
-- Change the 'User Role*' value from the current 'ESS' to 'Admin' (assuming 'Admin' is a selectable role type).
-- Select a valid option from the new mandatory 'User Type' dropdown (e.g., 'Standard' or 'Super Admin').
-- Ensure 'Change Password?' checkbox is unchecked.
-- Click the 'Save Button'.
-- Verify navigation back to 'Admin / User Management' page and confirm the updated role and User Type persistence upon reloading the user's edit screen.
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
+- Navigate to Admin -> Job.
+- Locate a pre-created test Job Title (e.g., 'Test Job Deletable') and click the 'Delete Icon'.
+- Confirm the deletion prompt.
 
 ---
 
-dsfsdfsdfsdfsdfsdfsdfds
+## KAN6_F2_UI_007
+**Description:** Verify the successful display and functionality of the mandatory 'User Type' field in the Edit User section.
+
+**Priority:** Critical
+
+**Expected Result:** The Edit User page loads, and the new 'User Type' field is visible and editable/selectable, allowing for selection of a specific type.
+
+### Steps:
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
+- Navigate to Admin / User Management (As per Documentation Section 3.1).
+- Locate any user record and click the 'Edit Icon' (pencil icon).
+- Verify that a field labeled 'User Type*' (mandatory) is present among the form fields.
+- Open the dropdown for 'User Type' and verify at least one option is available.
+
+---
+
+## KAN6_F2_VAL_008
+**Description:** Verify the mandatory validation rule for the 'User Type' field when attempting to save changes without selecting a type (Negative Test).
+
+**Priority:** Critical
+
+**Expected Result:** An error message is displayed indicating that 'User Type' is mandatory, and the Save action is blocked.
+
+### Steps:
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
+- Navigate to Admin / User Management.
+- Locate user 'Jobinsam@674' and click the 'Edit Icon'.
+- Ensure the 'User Type' field selection is cleared/defaulted to an empty selection (if possible).
+- Change the 'Status' dropdown from 'Enabled' to 'Disabled' (to trigger a save attempt without User Type change).
+- Click the 'Save Button' (as documented in Sec 4.3 of page 9).
+
+---
+
+## KAN6_F2_WORKFLOW_009
+**Description:** Verify successful update of an existing user, specifically setting the 'User Type' field to a specific value.
+
+**Priority:** High
+
+**Expected Result:** The user details, including the new 'User Type', are successfully updated, and the user is returned to the User Management page with a success confirmation.
+
+### Steps:
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
+- Navigate to Admin / User Management.
+- Locate user 'Jobinsam@674' and click the 'Edit Icon'.
+- Select a specific User Type (e.g., 'Admin Type' - assuming this exists) from the 'User Type' dropdown.
+- Click the 'Save Button'.
+- Verify returning to Admin/User Management and confirming the saved 'User Type' upon re-editing the user.
+
+---
+
+## KAN6_F1_VAL_010
+**Description:** Boundary Test: Verify saving a new Job Title when ALL fields (Title, Description, Specification) are empty.
+
+**Priority:** Medium
+
+**Expected Result:** The job creation process is correctly aborted upon attempting to save with all required fields blank.
+
+### Steps:
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click on the login button.
+- Navigate to Admin -> Job -> Click 'Add New Button'.
+- Ensure 'Job Title', 'Job Description', and 'Job Specification' fields are all empty.
+- Click the 'Save' button.
+- Verify that the system enforces validation (expectedly on 'Job Title' first, or aggregated error) and prevents saving.
+
+---
+
