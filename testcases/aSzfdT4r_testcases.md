@@ -210,3 +210,24 @@ Total Testcases: **10**
 
 ---
 
+## TC_KAN6_FEAT2_SUCCESS_011
+**Description:** TC_KAN6_FEAT2_SUCCESS_010: Verify successful update of user details including setting a specific 'User Type'.
+
+**Priority:** High
+
+**Expected Result:** The user details (including the selected User Type) are saved correctly, and the user is returned to the System Users table with a success message.
+
+### Steps:
+- Navigate to URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+- Enter username as 'Admin'
+- Enter password as 'admin123'
+- Click the Login button.
+- Navigate to Admin -> User Management.
+- Click the 'Edit' icon for an existing user (e.g., user 'Jobinsam@674').
+- Select 'Admin' from the 'User Type' dropdown.
+- Verify that the existing required fields (User Role, Employee Name, Status, Username) remain valid or update them if necessary to avoid unintended side effects from other validations.
+- Click the 'Save' button.
+- Verify success message is displayed.
+- Re-edit the same user record and verify that 'User Type' is set to 'Admin'.
+
+---
